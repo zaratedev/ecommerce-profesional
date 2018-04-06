@@ -14,7 +14,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::paginate(12);
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -24,7 +25,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $product = new Product;
+        return view('products.create', ['product' => $product]);
     }
 
     /**
@@ -42,7 +44,7 @@ class ProductsController extends Controller
         ];
 
         if ( Product::create($product) ) {
-          return redirect('/');
+          return redirect('/productos');
         } else {
           return view('products.create');
         }
@@ -67,7 +69,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('products.edit', ["product" => $product]);
     }
 
     /**
@@ -79,7 +82,18 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+
+        if ( $product->update() ) {
+            return redirect('/productos');
+        } else {
+            return view('products.edit', ["product" => $product]);
+        }
+        
     }
 
     /**
