@@ -19,6 +19,9 @@ class ProductsController extends Controller
      */
     public function index( Request $request)
     {
+        
+
+
         $products = Product::paginate(12);
 
         if ( $request->wantsJson()) {
