@@ -10010,3 +10010,18 @@ a.text-dark:focus {
           justify-content: center;
 }
 
+.card-product {
+  max-width: 400px;
+  margin: 1em 0;
+}
+
+.card-product strong {
+  text-transform: uppercase;
+}
+
+.card-product.total {
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: solid 1px #eee;
+}
+
