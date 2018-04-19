@@ -12,7 +12,7 @@
 
 				  </div>
 				  <div class="card-footer">
-				  	<a href="#" class="btn btn-success">Agregar al carrito</a>
+				  	<add-product-btn :product='{!! json_encode($product) !!}'></add-product-btn>
 				  	@include('products.delete')
 				  </div>
 				</div>
