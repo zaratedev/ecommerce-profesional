@@ -26,7 +26,9 @@
 						'Content-Type': 'application/json'
 					}
 				}).then( ()=> {
-					console.log('Se agregó el producto')
+					console.log('Se agregó el producto');
+					// incrementamos el count del producto a treves de la mutuacion
+					window.store.commit("increment");
 				})
 			}
 		}
