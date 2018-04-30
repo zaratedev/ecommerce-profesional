@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 
 namespace App;
 
@@ -16,8 +15,8 @@ use PayPal\Core\SandboxEnvironment;
 class PayPal
 {
 	public $client, $enviroment;
-	
-	function __construct(argument)
+
+	public function __construct()
 	{
 		$clientid = Config::get('services.paypal.clientid');
 		$secret = Config::get('services.paypal.secret');
@@ -49,8 +48,8 @@ class PayPal
 			],
 
 			"redirect_urls" => [
-				"cancel_url" => "/",
-				"return_url" => "/"
+				"cancel_url" => URL::route('shopping_cart.show'),
+				"return_url" => URL::route('payments.execute')
 			]
 
 		];
@@ -59,6 +58,19 @@ class PayPal
 
 		return $request;
 	}
-}
 
- ?>
+	public function charge($amount)
+	{
+		return $this->client->execute($this->buildPaymentRequest($amount));
+	}
+
+	public function execute($paymentId, $payerId)
+	{
+		$paymentExecute = new PaymentExecuteRequest($paymentId);
+		$paymentExecute->body = [
+			"payer_id" => $payerId
+		];
+
+		return $this->client->execute($paymentExecute);
+	}
+}

@@ -12,13 +12,13 @@
 				<div class="col-12 col-md-6">
 					<p>Paga tu total facilmente con cualquier de éstos metodos, a través de PayPal</p>
 					<div>
-						<a href="" class="btn btn-primary">Proceder al pago</a>
+						<a href="{{ route('payments.pay') }}" class="btn btn-primary">Proceder al pago</a>
 					</div>
-					
+
 				</div>
 			</div>
-			
-			
+
+
 		</div>
 	</div>
 </div>
