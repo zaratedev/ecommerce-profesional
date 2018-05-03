@@ -33,6 +33,10 @@ class PaymentsController extends Controller
       $paypal = new Paypal();
       $response = $paypal->execute($request->paymentId, $request->PayerID);
 
-      var_dump($response);
+      if ( $response->statusCode == 200 ) {
+
+      } else {
+        return redirect(URL::route('shopping_cart.show'));
+      }
     }
 }
