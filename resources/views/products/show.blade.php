@@ -17,7 +17,17 @@
 				  </div>
 				</div>
 			</div>
-			
+
+			<div class="yotpo yotpo-main-widget"
+				data-product-id="{{ $product->id }}"
+				data-price="{{ $product->price }}"
+				data-currency="USD"
+				data-name="{{ $product->title }}"
+				data-url="{{ url('/productos/'.$product->id) }}"
+				data-image-url=""
+				data-description="{{ $product->description }}">
+			</div>
+
 		</div>
 	</div>
 @endsection

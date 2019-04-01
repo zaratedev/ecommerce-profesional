@@ -12,11 +12,11 @@ class Product extends Model
 
     public function url()
     {
-    	return $this->id ? 'productos.update' : 'productos.store';
+        return $this->id ? 'productos.update' : 'productos.store';
     }
 
     public function method()
     {
-    	return $this->id ? 'PUT' : 'POST';
+        return $this->id ? 'PUT' : 'POST';
     }
 }

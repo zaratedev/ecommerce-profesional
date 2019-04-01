@@ -40,4 +40,7 @@ return [
         'secret' => env('PAYPAL_CLIENT_SECRET')
     ],
 
+    'yotpo' => [
+        'api_key' => env('YOTPO_API_KEY'),
+    ],
 ];
