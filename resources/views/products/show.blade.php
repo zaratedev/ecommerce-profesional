@@ -18,6 +18,18 @@
 				</div>
 			</div>
 
+            <div class="yotpo bottomLine"
+              {{-- data-appkey="7pyIqWrAgCwBCLmHDkC58cLgMolH3jK6h7JaRsgI" --}}
+              data-domain="{{ url('/') }}"
+              data-product-id="{{ $product->id }}"
+              data-product-models="Products model information"
+              data-name="{{ $product->title }}"
+              data-url="{{ url('/productos/'.$product->id) }}"
+              data-image-url="The product image url. Url escaped"
+              data-description="{{ $product->description }}"
+              data-bread-crumbs="Product categories">
+            </div>
+
 			<div class="yotpo yotpo-main-widget"
 				data-product-id="{{ $product->id }}"
 				data-price="{{ $product->price }}"

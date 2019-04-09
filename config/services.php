@@ -37,10 +37,11 @@ return [
 
     'paypal' => [
         'clientid' => env('PAYPAL_CLIENT_ID'),
-        'secret' => env('PAYPAL_CLIENT_SECRET')
+        'secret' => env('PAYPAL_CLIENT_SECRET'),
     ],
 
     'yotpo' => [
-        'api_key' => env('YOTPO_API_KEY'),
+        'key' => env('YOTPO_API_KEY'),
+        'secret' => env('YOPTO_API_SECRET'),
     ],
 ];

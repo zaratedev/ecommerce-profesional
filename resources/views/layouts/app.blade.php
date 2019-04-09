@@ -23,7 +23,7 @@
     <script type="text/javascript">
     (function e(){
         var e=document.createElement("script");
-            e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/{{ config('services.yotpo.api_key') }}/widget.js";
+            e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/{{ config('services.yotpo.key') }}/widget.js";
             var t=document.getElementsByTagName("script")[0];
             t.parentNode.insertBefore(e,t)
     })();
